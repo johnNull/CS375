@@ -1,0 +1,15 @@
+PART A
+
+To run:
+make clean,
+make,
+make r1 | make r2 | make r3
+
+make r1 runs input.txt which is the standard 1 key case.
+make r2 runs input2.txt which is the no key case.
+make 3 runs input3.txt which is the multiple key case.
+
+
+PART B
+
+I initially sort the array.  I then start with and element on the right end and take the difference between that element and each element to the left of it.  For each difference calculated, I binary search through the array for that difference, if it is found I break and output that answer, otherwise move the right end to the left one and repeat the process until there are no more combinations left. Print out an answer if a binary search succeeds. The worst case complexity of the algorithm (excluding sort) is O(logN+1(N choose 2)) because there are NC2 combinations and you have to binary search for each which has worst case logN+1.
